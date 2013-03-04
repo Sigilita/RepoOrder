@@ -1,4 +1,0 @@
-id:5656 *
-descripcion: Refrescante cocacola *
-nombre: Coca Cola *
-imagen: ../imagenes/cocacola.png *
