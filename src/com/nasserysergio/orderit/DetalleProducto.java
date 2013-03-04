@@ -29,7 +29,10 @@ public class DetalleProducto extends Activity{
 	private Button btnCancelar;
 	private String IdProducto="5656";
 	private EditText nombreProducto;
-	
+	/*
+	 * (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layoutdetalle);
