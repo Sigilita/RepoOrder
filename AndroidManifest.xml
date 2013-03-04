@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.nasserysergio.orderit.DetalleProducto"
+            android:name="com.nasserysergio.orderit.ListaProductos"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
              <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
          <activity
-            android:name="com.nasserysergio.orderit.DetalleProduct"
+            android:name="com.nasserysergio.orderit.DetalleProducto"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
              
