@@ -9,25 +9,47 @@
         android:targetSdkVersion="17" />
 
     <application
-        android:allowBackup="true"
+         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.nasserysergio.orderit.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.nasserysergio.orderit.ActivityProductos"
+            android:label="Pedido" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
             android:name="com.nasserysergio.orderit.ListaProductos"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
          <activity
             android:name="com.nasserysergio.orderit.DetalleProducto"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
              
+        </activity>
+         <activity
+            android:name="com.nasserysergio.orderit.ListaProductosGeneral"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

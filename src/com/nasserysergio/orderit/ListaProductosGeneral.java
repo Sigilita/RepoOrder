@@ -4,20 +4,18 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
-
-
-public class ListaProductos extends Activity {
-	String IdProductos;
+public class ListaProductosGeneral extends Activity{
+	String IdProductosGeneral="IdProductosGeneral";
 	ArrayList<Producto> ListaProductos;
 	String text;
 	ListView lista;
@@ -25,11 +23,10 @@ public class ListaProductos extends Activity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		ListaProductos= new ArrayList<Producto>();
-		IdProductos=getIntent().getExtras().getString("id");
 		RellenarDeTxT();
 		CrearListaProductos(text);
-		setContentView(R.layout.activity_listaproductos);
-		lista=(ListView) findViewById(R.id.listViewProductos);
+		setContentView(R.layout.activity_listaproductosgeneral);
+		lista=(ListView) findViewById(R.id.listViewProductosGeneral);
 		arrayProductos=ListaProductos.toArray(new Producto[ListaProductos.size()]);
 		AdaptadorProducto ap= new AdaptadorProducto(this, arrayProductos);
 		lista.setAdapter(ap);
@@ -42,7 +39,7 @@ public class ListaProductos extends Activity {
 				Producto productoSeleccionado;
 				productoSeleccionado=(Producto)ListaProductos.getItemAtPosition(pos);
 				int idP=productoSeleccionado.getId();
-				Intent i= new Intent(getApplicationContext(),DetalleProducto.class);
+				Intent i= new Intent(getApplicationContext(),ListaProductos.class);
 				i.putExtra("id", String.valueOf(idP));
 				startActivity(i);
 			}
@@ -56,7 +53,7 @@ public class ListaProductos extends Activity {
 	InputStream is=null;
 	
 	try{
-		is=asset.open(IdProductos + ".txt");
+		is=asset.open(IdProductosGeneral + ".txt");
 		text= cargarArchivoTexto(is);
 		
 	}
@@ -105,6 +102,3 @@ public class ListaProductos extends Activity {
 		
 	}
 }
-
-
-

@@ -5,7 +5,7 @@ public class Producto
 	private String nombre;
 	private int cantidad;
 	private int id;
-
+	private float precioUnidad;
 
 	@Override
 	public String toString() {
@@ -21,6 +21,18 @@ public class Producto
 		this.id=id;
 		this.nombre =nombre;
 	}
+	public Producto(int id, int cantidad,String nombre)
+	{
+		this.id=id;
+		this.cantidad =cantidad;
+		this.nombre=nombre;
+	}
+	public Producto(String nombre, int cantidad, float precioUnidad)
+	{
+		this.nombre = nombre;
+		this.cantidad = cantidad;
+		this.precioUnidad = precioUnidad;
+	}
 	public int getId() {
 		return id;
 	}
@@ -28,6 +40,14 @@ public class Producto
 	public void setId(int id) {
 		this.id = id;
 	}
+	public float getPrecioUnidad() {
+		return precioUnidad;
+	}
+
+	public void setPrecioUnidad(float precioUnidad) {
+		this.precioUnidad = precioUnidad;
+	}
+
 	
 	public Producto(String nombre, int cantidad)
 	{

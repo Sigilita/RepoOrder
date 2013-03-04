@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -79,6 +80,15 @@ public class DetalleProducto extends Activity{
 				//enviar informacion de la cantidad
 				String cantidadProducto=cantidad.getText().toString();
 				String idProdcuto=IdProducto;
+				String nombreP=nombreProducto.getText().toString();
+				Intent i= new Intent(getApplicationContext(),ActivityProductos.class);
+				String[] valores= new String[3];
+				valores[0]=idProdcuto;
+				valores[1]=cantidadProducto;
+				valores[2]=nombreP;
+				i.putExtra("datos", valores);
+				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(i);
 			}
 		});
 		btnCancelar.setOnClickListener(new OnClickListener() {
